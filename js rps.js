@@ -2,8 +2,11 @@ let choice = ["rock", "paper", "scissors"];
 
 let computerSelection = "";
 
-let playerScore = 0;
+let playerScore = 0
 let computerScore = 0;
+let maxScore = 5;
+let playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+let computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
 
 console.log(`Player score: ${playerScore}`)
 console.log(`Computer score: ${computerScore}`)
@@ -28,24 +31,29 @@ gameButtons.forEach(button => {
 
 function compare(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) { 
-        console.log("It\'s a tie, wop wop");
+        
     }
     
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return playerScore++;
+        playerScore++;
 
         }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        return playerScore++;
+        playerScore++;
         
     }
     else if (playerSelection == "scissors" && computerSelection === "paper") {
-        return playerScore++;
+        playerScore++;
+
         
     }
     else {
-        return computerScore++;
+        computerScore++;
+
     }
+    playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+    computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
+    // console.log(playerScoreText, computerScoreText)
 }
 //function that takes the input from player and computer and compares them to determine winne + add points when needed
 
@@ -64,16 +72,23 @@ function playGame() {
         
         
     compare(playerSelection, computerSelection);
-        
-    console.log(`Score: Player: ${playerScore} Computer: ${computerScore}`);
+    endGame();
     
-    if (playerScore === 5) {
-        console.log("You win!");
-    }
-    else {
-        console.log("You lost.")
-    }
+    
 
+    
+}
+
+function endGame() {
+    if (playerScore === maxScore) {
+        alert("You won!")
+        gameButtons.forEach(button => {
+            button.removeEventListener("click")
+        })
+    }
+    else if (computerScore === maxScore) {
+        alert("You lost")
+    }
     
 }
 
