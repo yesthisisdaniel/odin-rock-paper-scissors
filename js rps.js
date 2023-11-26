@@ -36,20 +36,28 @@ function compare(playerSelection, computerSelection) {
     }
     
     else if (playerSelection === "rock" && computerSelection === "scissors") {
+        if (playerScore < maxScore) {
         playerScore++;
+        }
 
         }
     else if (playerSelection === "paper" && computerSelection === "rock") {
+        if (playerScore < maxScore) {
         playerScore++;
+        }
         
     }
     else if (playerSelection == "scissors" && computerSelection === "paper") {
+        if (playerScore < maxScore) {
         playerScore++;
+        }
 
         
     }
     else {
+        if (computerScore < maxScore && playerScore < maxScore) {
         computerScore++;
+        }
 
     }
     playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
