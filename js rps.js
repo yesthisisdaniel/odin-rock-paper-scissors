@@ -29,6 +29,7 @@ gameButtons.forEach(button => {
 
 
 
+
 function compare(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) { 
         
@@ -55,8 +56,6 @@ function compare(playerSelection, computerSelection) {
     computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
     // console.log(playerScoreText, computerScoreText)
 }
-//function that takes the input from player and computer and compares them to determine winne + add points when needed
-
 
 function getComputerChoice() {
     return choice[Math.floor(Math.random() * choice.length)]
@@ -69,8 +68,6 @@ function playGame() {
     let computerSelection = getComputerChoice();
     let cpuChoice = document.querySelector(".cpu-choice").textContent = `Computer Chose: ${computerSelection}`
 
-        
-        
     compare(playerSelection, computerSelection);
     endGame();
     
@@ -81,13 +78,10 @@ function playGame() {
 
 function endGame() {
     if (playerScore === maxScore) {
-        alert("You won!")
-        gameButtons.forEach(button => {
-            button.removeEventListener("click")
-        })
+        console.log("you won")
     }
     else if (computerScore === maxScore) {
-        alert("You lost")
+        console.log("you lost")
     }
     
 }
