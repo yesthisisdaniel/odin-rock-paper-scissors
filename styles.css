@@ -37,9 +37,19 @@ body {
 }
 
 .game-button {
-  background-color: beige;
-  border-radius: 20%;
+  display: flex;
+  /* border-radius: 20%; */
+  height: 200px;
+  width: 200px;
+  background: none;
+  border: none;
 }
+
+/* .game-icon {
+  height: 300px;
+  width: auto;
+} */
+
 
 .main-content {
   display: flex;
@@ -51,9 +61,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   /* border-style: solid; */
-  justify-content: space-evenly;
+  justify-content: center;
 
-  margin: 0px 600px 0px 600px;
+  /* margin: 0px 600px 0px 600px; */
 
 }
 

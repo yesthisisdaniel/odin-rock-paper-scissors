@@ -9,33 +9,27 @@
     <script src="js rps.js" defer></script>
 
     <div class = "title-container">
-        <div class = "title">Welcome to rock! paper! SCISSORS!</div>
+        <div class = "title">Rock! Paper! SCISSORS!</div>
     </div>
     <main class = "main content">
 
     <div id="game-buttons-container">
-        <input type = "button" value = "rock" id = "rock-button" class = "game-button"/>
-        <input type = "button" value = "paper" id = "paper-button" class = "game-button">
-        <input type = "button" value = "scissors" id = "scissors-button" class = "game-button"/>
+        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/rock.png></button>
+        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/paper.png></button>
+        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/scissors.png></button>
     </div>
 
     <div class = player-cpu-choices-container>
         <div class = "cpu-container">
             <p>Computer</p>
             <p class = "cpu-choice choice"></p>
-        </div>
-        <div class = "player-container">
-            <p>Player</p>
-            <p class = "player-choice choice"></p>
-        </div>
-    </div>
-
-    <div id="score-container">
-        <div class = "score-results">
-            <p class = "player-score score">Player score: </p>
             <p class = "cpu-score score">CPU score: </p>
         </div>
-    </div>
+        <div class = "player-container">
+            <p></p>
+            <p class = "player-choice choice"></p>
+            <p class = "player-score score">Player score: </p>
+        </div>
 
     </main>
 </body>
