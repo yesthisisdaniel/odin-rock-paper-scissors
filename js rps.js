@@ -1,81 +1,103 @@
 let choice = ["rock", "paper", "scissors"];
-//create array for the choices of rock, paper, and scissors
 
-let playerSelection = "";
 let computerSelection = "";
-//these variables need to be empty since there is no need for the program to run the variables/functions when the browsers loads the program
-let playerScore = 0;
+
+let playerScore = 0
 let computerScore = 0;
+let maxScore = 5;
+let playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+let computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
 
 console.log(`Player score: ${playerScore}`)
 console.log(`Computer score: ${computerScore}`)
+let gameButtons = document.querySelectorAll(".game-button");
+let playerSelection = "";
+
+gameButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        playerSelection = button.value;
+
+        playGame();
+    })
+})
+
+
+
+
+
+
+
+
+
 
 function compare(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) { 
-        alert("It\'s a tie, wop wop");
+        
     }
     
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return playerScore++;
+        if (playerScore < maxScore) {
+        playerScore++;
+        }
 
         }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        return playerScore++;
+        if (playerScore < maxScore) {
+        playerScore++;
+        }
         
     }
     else if (playerSelection == "scissors" && computerSelection === "paper") {
-        return playerScore++;
+        if (playerScore < maxScore) {
+        playerScore++;
+        }
+
         
     }
     else {
-        return computerScore++;
-    }
-}
-//function that takes the input from player and computer and compares them to determine winne + add points when needed
+        if (computerScore < maxScore && playerScore < maxScore) {
+        computerScore++;
+        }
 
+    }
+    playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+    computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
+    // console.log(playerScoreText, computerScoreText)
+}
 
 function getComputerChoice() {
     return choice[Math.floor(Math.random() * choice.length)]
     //use Math.random to extract a random choice in the choice array to return one of three options
 }
-function getPlayerChoice() {
-    const choice = prompt("What is your answer?");
-    return choice.toLowerCase();
-    //gets the player's input using a prompt, then using toLowerCase to accept case-insensitive input
-}
 
 function playGame() {
-    while (playerScore < 5 && computerScore < 5) {
-        //the while loop will run until either the computer or the player reaches 5 points
-
-
-        //playerSelection and computerSelection declared INSIDE the function so that they do not run OUTSIDE the function more than need
-        let playerSelection = getPlayerChoice()
-        // playerSelection declared and intialized to the function getPlayerSchoice so that when playGame() run THEN the player is prompted to input an answer
-        console.log(playerSelection)
-        //prinot out the playerSelection to the console so that we know what we chose but more importantly to confirm the output is correct
-        let computerSelection = getComputerChoice();
-        console.log(computerSelection)
-        //the same as the comments above
+    if (computerScore < maxScore && playerScore < maxScore) {
+        let playerChoice = document.querySelector(".player-choice").textContent = playerSelection
+    }
         
-        compare(playerSelection, computerSelection);
-        // console.log(playerScore);
-        // console.log(computerScore);
-        console.log(`Score: Player: ${playerScore} Computer: ${computerScore}`);
+    let computerSelection = getComputerChoice();
+
+    if (computerScore < maxScore && playerScore < maxScore) {
+        let cpuChoice = document.querySelector(".cpu-choice").textContent = computerSelection;
     }
 
-    if (playerScore === 5) {
-        console.log("You win!");
-    }
-    else {
-        console.log("You lost.")
-    }
+    compare(playerSelection, computerSelection);
+    endGame();
+    
+    
 
-    //this conditional needs top be ran outside of the loop otherwise the conditional would keep running due to the loop
-        
+    
 }
 
-playGame();
+function endGame() {
+    if (playerScore === maxScore) {
+        console.log("you won")
+    }
+    else if (computerScore === maxScore) {
+        console.log("you lost")
+    }
+    
+}
 
 
 
