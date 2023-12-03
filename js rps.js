@@ -71,10 +71,10 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    let playerChoice = document.querySelector(".player-choice").textContent = `Player Chose: ${playerSelection}`
+    let playerChoice = document.querySelector(".player-choice").textContent = playerSelection
         
     let computerSelection = getComputerChoice();
-    let cpuChoice = document.querySelector(".cpu-choice").textContent = `Computer Chose: ${computerSelection}`
+    let cpuChoice = document.querySelector(".cpu-choice").textContent = computerSelection;
 
     compare(playerSelection, computerSelection);
     endGame();
