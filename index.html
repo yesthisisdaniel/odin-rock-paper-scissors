@@ -14,21 +14,21 @@
     <main class = "main content">
 
     <div id="game-buttons-container">
-        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/rock.png></button>
-        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/paper.png></button>
-        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon" src = rps-images/scissors.png></button>
+        <button type = "submit" value = "rock" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon rock-icon" src = rps-images/rock.png></button>
+        <button type = "submit" value = "paper" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon paper-icon" src = rps-images/paper.png></button>
+        <button type = "submit" value = "scissors" id = "rock-button" class = "game-button"><img draggable = "false" ondragstart = return false; class = "game-icon scissors-icon" src = rps-images/scissors.png></button>
     </div>
 
     <div class = player-cpu-choices-container>
         <div class = "cpu-container">
             <p>Computer</p>
-            <p class = "cpu-choice choice"></p>
-            <p class = "cpu-score score">CPU score: </p>
+            <div class = "cpu-choice choice"></div>
+            <!-- <p class = "cpu-score score">CPU score: </p> -->
         </div>
-        <div class = "player-container">
-            <p></p>
+        <div class = "result-container">
+            <p>Player</p>
             <p class = "player-choice choice"></p>
-            <p class = "player-score score">Player score: </p>
+            <!-- <p class = "player-score score"></p> -->
         </div>
 
     </main>

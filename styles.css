@@ -73,7 +73,7 @@ body {
 }
 
 .cpu-container, 
-.player-container {
+.result-container {
   border-style: solid;
   width: 150px;
   padding: 10px
