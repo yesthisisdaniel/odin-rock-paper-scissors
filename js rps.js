@@ -5,8 +5,8 @@ let computerSelection = "";
 let playerScore = 0
 let computerScore = 0;
 let maxScore = 5;
-let playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
-let computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
+// let playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+// let computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
 
 console.log(`Player score: ${playerScore}`)
 console.log(`Computer score: ${computerScore}`)
@@ -60,8 +60,8 @@ function compare(playerSelection, computerSelection) {
         }
 
     }
-    playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
-    computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
+    // playerScoreText = document.querySelector(".player-score").textContent = `Player score: ${playerScore}`;
+    // computerScoreText = document.querySelector(".cpu-score").textContent = `CPU score: ${computerScore}`;
     // console.log(playerScoreText, computerScoreText)
 }
 
@@ -71,10 +71,22 @@ function getComputerChoice() {
 }
 
 function playGame() {
+    let img = document.createElement("img")
     let playerChoice = document.querySelector(".player-choice").textContent = playerSelection
         
     let computerSelection = getComputerChoice();
-    let cpuChoice = document.querySelector(".cpu-choice").textContent = computerSelection;
+    let cpuChoice = document.querySelector(".cpu-choice")
+
+    if (computerScore === "rock") {
+        img.src = "rps-images/rock.png"
+        cpuChoice = document.appendChild(img)
+    } else if (computerSelection === "paper") {
+        cpuChoice = document.querySelector(".paper-icon")
+    }
+    else {
+        cpuChoice = document.querySelector(".scissors-icon").src
+    }
+    console.log(cpuChoice)
 
     compare(playerSelection, computerSelection);
     endGame();
