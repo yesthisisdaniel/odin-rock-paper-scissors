@@ -73,28 +73,33 @@ function getComputerChoice() {
 function playGame() {
     let img = document.createElement("img")
     let playerChoice = document.querySelector(".player-choice").textContent = playerSelection
-        
     let computerSelection = getComputerChoice();
     let cpuChoice = document.querySelector(".cpu-choice")
 
     if (computerScore === "rock") {
-        img.src = "rps-images/rock.png"
-        cpuChoice = document.appendChild(img)
+        img.src = "rps-images/rock.png";
+        img.style.height = "150px";
+        img.style.width = "150px"
+        cpuChoice.append(img);
     } else if (computerSelection === "paper") {
-        cpuChoice = document.querySelector(".paper-icon")
+        img.src = "rps-images/paper.png";
+        img.style.height = "150px";
+        img.style.width = "150px"
+        cpuChoice.append(img);
     }
     else {
-        cpuChoice = document.querySelector(".scissors-icon").src
+        img.src = "rps-images/scissors.png";
+        img.style.height = "150px";
+        img.style.width = "150px"
+        cpuChoice.append(img);
     }
-    console.log(cpuChoice)
+
 
     compare(playerSelection, computerSelection);
     endGame();
-    
-    
-
-    
 }
+
+
 
 function endGame() {
     if (playerScore === maxScore) {
